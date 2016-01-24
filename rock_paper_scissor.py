@@ -73,7 +73,7 @@ main()
 # -------------------------------------------------------------
 
 # def printWinner(P,C):
-# 	if ( P == C ): #Rock, Paper, or Scissior for both
+# 	if ( P == C ): #Rock, Paper, or Scissor for both
 # 		print "You chose", getChoice(P) 
 # 		print "Computer chose", getChoice(C)
 # 		print "It is a draw."

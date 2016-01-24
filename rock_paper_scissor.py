@@ -37,14 +37,14 @@ class Player(object):
 def getChoice(choiceNumber):
 	choices = {1: "ROCK.", 2: "PAPER.", 3: "SCISSOR."}
 	return choices[choiceNumber]
-	"""
-	if ( choiceNumber == 1 ):
-		return "ROCK."
-	elif ( choiceNumber == 2 ):
-		return "PAPER."
-	elif ( choiceNumber == 3 ):
-		return "SCISSOR."
-	"""
+
+	# if ( choiceNumber == 1 ):
+	# 	return "ROCK."
+	# elif ( choiceNumber == 2 ):
+	# 	return "PAPER."
+	# elif ( choiceNumber == 3 ):
+	# 	return "SCISSOR."
+
 
 #check and prints the winner
 def printWinner(P,C):

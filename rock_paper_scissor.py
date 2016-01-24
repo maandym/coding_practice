@@ -47,36 +47,57 @@ def getChoice(choiceNumber):
 
 
 #check and prints the winner
-def printWinner(P,C):
-	if( P == C ): #Rock, Paper, or Scissior for both
-		print "You chose", getChoice(P) 
-		print "Computer chose", getChoice(C)
-		print "It is a draw."
-	elif ( P == 1 and C == 2 ): #Player is Rock and Computer is Paper 
-		print "You chose", getChoice(P) 
-		print "Computer chose", getChoice(C)
-		print "You lose :("
-	elif ( P == 1 and C == 3 ): #Player is Rock and Computer is Scissor 
-		print "You chose", getChoice(P) 
-		print "Computer chose", getChoice(C)
-		print "You won :)"
-	elif ( P == 2 and C == 1 ): #Player is Paper and Computer is Rock 
-		print "You chose", getChoice(P) 
-		print "Computer chose", getChoice(C)
-		print "You won :)"
-	elif ( P == 2 and C == 3 ): #Player is Paper and Computer is Scissor 
-		print "You chose", getChoice(P) 
-		print "Computer chose", getChoice(C)
-		print "You lose :("
-	elif ( P == 3 and C == 1 ): #Player is Scissor and Computer is Rock 
-		print "You chose", getChoice(P) 
-		print "Computer chose", getChoice(C)
-		print "You lose :("
-	elif ( P == 3 and C == 2 ): #Player is Scissor and Computer is Paper 
-		print "You chose", getChoice(P) 
-		print "Computer chose", getChoice(C)
-		print "You won :)"
 
+draw = "It's a draw."
+winner = "You won :)"
+loser = "You lose :("
+
+def checkWinner(P, C):
+	if ( P == C ):
+		return draw
+	elif ( (P-C)%3 == 1 ):
+		return winner
+	elif ( (C-P)%3 == 1 ):
+		return loser
+
+def printWinner(P,C):
+	print "You chose", getChoice(P) 
+	print "Computer chose", getChoice(C)
+	print checkWinner(P, C)
+	# return checkWinner(P, C)
 
 #start the game
 main()
+
+
+# -------------------------------------------------------------
+
+# def printWinner(P,C):
+# 	if ( P == C ): #Rock, Paper, or Scissior for both
+# 		print "You chose", getChoice(P) 
+# 		print "Computer chose", getChoice(C)
+# 		print "It is a draw."
+# 	elif ( P == 1 and C == 2 ): #Player is Rock and Computer is Paper 
+# 		print "You chose", getChoice(P) 
+# 		print "Computer chose", getChoice(C)
+# 		print "You lose :("
+# 	elif ( P == 1 and C == 3 ): #Player is Rock and Computer is Scissor 
+# 		print "You chose", getChoice(P) 
+# 		print "Computer chose", getChoice(C)
+# 		print "You won :)"
+# 	elif ( P == 2 and C == 1 ): #Player is Paper and Computer is Rock 
+# 		print "You chose", getChoice(P) 
+# 		print "Computer chose", getChoice(C)
+# 		print "You won :)"
+# 	elif ( P == 2 and C == 3 ): #Player is Paper and Computer is Scissor 
+# 		print "You chose", getChoice(P) 
+# 		print "Computer chose", getChoice(C)
+# 		print "You lose :("
+# 	elif ( P == 3 and C == 1 ): #Player is Scissor and Computer is Rock 
+# 		print "You chose", getChoice(P) 
+# 		print "Computer chose", getChoice(C)
+# 		print "You lose :("
+# 	elif ( P == 3 and C == 2 ): #Player is Scissor and Computer is Paper 
+# 		print "You chose", getChoice(P) 
+# 		print "Computer chose", getChoice(C)
+# 		print "You won :)"

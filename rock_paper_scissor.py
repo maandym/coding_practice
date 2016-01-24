@@ -4,21 +4,6 @@ class Computer(object):
 	def choose(self):
 		return random.randrange(1,3)
 
-def main():
-	print "Let's play Rock Paper Scissor"
-	print "You choose and I tell you if you win!"
-	print "Let's start: what is your name?"
-	name = raw_input(">>>") 
-
-	again  = 'y'
-	while(again == 'y'):
-		tPlayer = Player(name)
-		tComputer = Computer()
-		printWinner(tPlayer.choose() , tComputer.choose())
-		again = raw_input("Do you want to play again? y or n: ")
-	
-	print "Bye Bye %s!" %(tPlayer.name)	
-
 class Player(object):
 	def __init__(self, name):
 		self.name = name;
@@ -32,6 +17,23 @@ class Player(object):
 			print "Wrong!!! Enter 1 for rock, 2 for paper, or 3 for scissor."
 			Choice = int(raw_input('>'))
 		return Choice
+
+
+def main():
+	print "Let's play Rock Paper Scissor"
+	print "You choose and I tell you if you win!"
+	print "Let's start: what is your name?"
+	name = raw_input(">>>") 
+
+	again  = 'y'
+	while(again == 'y'):
+		tPlayer = Player(name)
+		tComputer = Computer()
+		printWinner(tPlayer.choose() , tComputer.choose())
+		again = raw_input("Do you want to play again? y or n: ")
+	
+	print "Bye Bye {name}!".format(name=tPlayer.name)	
+
 
 #actual choice from the number
 def getChoice(choiceNumber):
